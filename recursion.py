@@ -4,7 +4,7 @@ def multiply(a, b):
     if b == 0:
         return 0
     elif b > 0:
-        return a + multiply(a, b -1)
+        return a + multiply(a, b -  1)
     else: # b < 0
         return -multiply(a, -b)
 
@@ -31,7 +31,7 @@ def countdown(n):
 # countdown(6)
 
 """#4. Implement a recursive function that prints all integers from 0 up to a given number n by modifying 
-the previous countdown function. """
+the previous countdown function."""
 def countup(n):
     if n == 0:
         print(0)
@@ -76,4 +76,47 @@ def fibonnaci(n):
         return fibonnaci(n - 1) + fibonnaci(n - 2)
 
 # print(fibonnaci(5))
+
+#tower of hanoi
+# Recursive Python function to solve the tower of hanoi
+def TowerOfHanoi(n, source, destination_rod, auxiliary_rod):
+    if n == 1:
+        print("Move disk 1 from source ", source, " to destination ", destination_rod)
+        return
+    TowerOfHanoi(n - 1, source, auxiliary_rod, destination_rod)
+    print("Move disk ", n, " from source ", source, " to destination ", destination_rod)
+    TowerOfHanoi(n - 1, auxiliary_rod, destination_rod, source)
+
+n = 6
+TowerOfHanoi(n, 'A', 'B', 'C')
+
+
+"""SUM OF HARMONIC SERIES """
+# Define a function named harmonic_sum that calculates the harmonic sum up to 'n' terms
+def harmonicSum(n):
+    if n<1:
+        return 0
+    else:
+        return 1/n + harmonicSum(n-1)
+
+# print(harmonicSum(4))
+
+#Finding the sum of nested lists using recursion
+def sumOfNestedList(listOfData):
+    total=0
+    for i in listOfData:
+        if type(i)==type([]):
+            total+=sumOfNestedList(i)
+        else:
+            total+=i
+    return total
+# print(sumOfNestedList([1,2,[3,4],[5,6]]))
+
+#Finding the sum of a list using recursion
+def sumOfList(listOfNumbers:list[int]):
+    if len(listOfNumbers)==1:
+        return listOfNumbers[0];
+    else:
+        return listOfNumbers[0]+sumOfList(listOfNumbers[1:])
+# print(sumOfList([1,2,3,4,5,6,7,8,9,10]))
 
