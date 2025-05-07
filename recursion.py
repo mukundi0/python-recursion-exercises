@@ -78,17 +78,20 @@ def fibonnaci(n):
 # print(fibonnaci(5))
 
 #tower of hanoi
-# Recursive Python function to solve the tower of hanoi
-def TowerOfHanoi(n, source, destination_rod, auxiliary_rod):
-    if n == 1:
-        print("Move disk 1 from source ", source, " to destination ", destination_rod)
+#Recursive function to solve the tower of Hanoi
+def towerOfHanoi(numberofdisks,source,target,auxiliary):
+    if numberofdisks==1:
+        print(f"Move disk 1 from {source} to {target}")
         return
-    TowerOfHanoi(n - 1, source, auxiliary_rod, destination_rod)
-    print("Move disk ", n, " from source ", source, " to destination ", destination_rod)
-    TowerOfHanoi(n - 1, auxiliary_rod, destination_rod, source)
+    else:
+        towerOfHanoi(numberofdisks-1,source,auxiliary,target)
+        print(f"Move disk {numberofdisks} from {source} to {target}")
+        towerOfHanoi(numberofdisks-1,auxiliary,target,source)
 
-n = 6
-TowerOfHanoi(n, 'A', 'B', 'C')
+towerOfHanoi(4,'A','C','B')#Move 3 disks from A to C using B as the helper
+#Move 2 disks from A to B using C
+#Move disk 3 from A to C
+#Move 2 disks from B to C
 
 
 """SUM OF HARMONIC SERIES """
