@@ -88,7 +88,7 @@ def towerOfHanoi(n,source,target,auxiliary):
         print(f"Move disk {n} from {source} to {target}")
         towerOfHanoi(n-1,auxiliary,target,source)
 
-towerOfHanoi(6,'A','C','B')
+towerOfHanoi(4,'A','C','B')
 
 
 """SUM OF HARMONIC SERIES """
@@ -115,11 +115,12 @@ def sumOfNestedList(listOfData):
 #Finding the sum of a list using recursion
 def sumOfList(listOfNumbers:list[int]):
     if len(listOfNumbers)==1:
-        return listOfNumbers[0];
+        return listOfNumbers[0]
     else:
         return listOfNumbers[0]+sumOfList(listOfNumbers[1:])
 # print(sumOfList([1,2,3,4,5,6,7,8,9,10]))
 
+#MEMORIZATION
 f_cache = {} #using dictionary key, value
 value = 0
 def fib2(number):
