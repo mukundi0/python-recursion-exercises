@@ -120,3 +120,22 @@ def sumOfList(listOfNumbers:list[int]):
         return listOfNumbers[0]+sumOfList(listOfNumbers[1:])
 # print(sumOfList([1,2,3,4,5,6,7,8,9,10]))
 
+f_cache = {} #using dictionary key, value
+value = 0
+def fib2(number):
+    if number in f_cache:
+        return f_cache[number]
+    if number == 1:
+        value = 1
+    elif number == 2:
+        value = 1
+    elif number > 2:
+        value = fib2(number - 1) + fib2(number - 2)
+
+
+    f_cache[number]= value
+    return value
+
+# for number in range(1,500):
+#     print(n, "i", fib2(n))
+#     print(f"{number} : {fib2(number)}")
