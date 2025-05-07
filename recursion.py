@@ -78,7 +78,7 @@ def fibonnaci(n):
 # print(fibonnaci(5))
 
 #tower of hanoi
-#Recursive function to solve the tower of Hanoi
+"""Recursive function to solve the tower of Hanoi"""
 def towerOfHanoi(n,source,target,auxiliary):
     if n==1:
         print(f"Move disk 1 from {source} to {target}")
@@ -92,7 +92,7 @@ towerOfHanoi(4,'A','C','B')
 
 
 """SUM OF HARMONIC SERIES """
-# Define a function named harmonic_sum that calculates the harmonic sum up to 'n' terms
+"""Define a function named harmonic_sum that calculates the harmonic sum up to 'n' terms"""
 def harmonicSum(n):
     if n<1:
         return 0
@@ -101,7 +101,7 @@ def harmonicSum(n):
 
 # print(harmonicSum(4))
 
-#Finding the sum of nested lists using recursion
+"""Finding the sum of nested lists using recursion"""
 def sumOfNestedList(listOfData):
     total=0
     for i in listOfData:
@@ -112,7 +112,7 @@ def sumOfNestedList(listOfData):
     return total
 # print(sumOfNestedList([1,2,[3,4],[5,6]]))
 
-#Finding the sum of a list using recursion
+"""Finding the sum of a list using recursion"""
 def sumOfList(listOfNumbers:list[int]):
     if len(listOfNumbers)==1:
         return listOfNumbers[0]
@@ -120,7 +120,7 @@ def sumOfList(listOfNumbers:list[int]):
         return listOfNumbers[0]+sumOfList(listOfNumbers[1:])
 # print(sumOfList([1,2,3,4,5,6,7,8,9,10]))
 
-#MEMORIZATION
+"""MEMORIZATION"""
 f_cache = {} #using dictionary key, value
 value = 0
 def fib2(number):
