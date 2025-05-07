@@ -79,14 +79,14 @@ def fibonnaci(n):
 
 #tower of hanoi
 #Recursive function to solve the tower of Hanoi
-def towerOfHanoi(numberofdisks,source,target,auxiliary):
-    if numberofdisks==1:
+def towerOfHanoi(n,source,target,auxiliary):
+    if n==1:
         print(f"Move disk 1 from {source} to {target}")
         return
     else:
-        towerOfHanoi(numberofdisks-1,source,auxiliary,target)
-        print(f"Move disk {numberofdisks} from {source} to {target}")
-        towerOfHanoi(numberofdisks-1,auxiliary,target,source)
+        towerOfHanoi(n-1,source,auxiliary,target)
+        print(f"Move disk {n} from {source} to {target}")
+        towerOfHanoi(n-1,auxiliary,target,source)
 
 towerOfHanoi(6,'A','C','B')
 
