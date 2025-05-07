@@ -88,10 +88,7 @@ def towerOfHanoi(numberofdisks,source,target,auxiliary):
         print(f"Move disk {numberofdisks} from {source} to {target}")
         towerOfHanoi(numberofdisks-1,auxiliary,target,source)
 
-towerOfHanoi(4,'A','C','B')#Move 3 disks from A to C using B as the helper
-#Move 2 disks from A to B using C
-#Move disk 3 from A to C
-#Move 2 disks from B to C
+towerOfHanoi(6,'A','C','B')
 
 
 """SUM OF HARMONIC SERIES """
